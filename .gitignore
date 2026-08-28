@@ -1,0 +1,21 @@
+# Bytecode / cache do Python
+__pycache__/
+*.pyc
+
+# Ambiente virtual (se você usar um)
+venv/
+env/
+.venv/
+
+# Arquivos gerados pelo PyInstaller ao criar o executável
+build/
+dist/
+*.spec
+
+# Dados gerados pelo app em si (planilhas Excel, evidências) —
+# normalmente não versionamos dados de uso, só o código
+QA/
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
