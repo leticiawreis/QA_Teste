@@ -78,3 +78,8 @@ você quer que o app (e a pasta `QA` com os dados) fique.
 * tela de relatórios consolidados;
 * controle de permissões;
 * backup automático das planilhas.
+## Relatório QA em Word
+
+A opção **Relatório Word** no menu lateral pergunta, um campo por vez, o que deve entrar no modelo `Template_QA_RPA_Geral.docx`. É possível navegar por seção, voltar, salvar rascunho e gerar o `.docx` na pasta `QA/06 - Relatórios Mensais` ou em outro local escolhido. Campos sem resposta aparecem como "Não informado" para revisão antes da entrega. O sistema não inventa resultados de testes.
+
+Instale as dependências atualizadas com `python -m pip install -r requirements.txt` e execute `python main.py`. Para gerar o `.exe`, rode `python build.py`; mantenha o modelo `.docx` junto do executável em `dist/`.

@@ -7,6 +7,8 @@ Como usar:
 """
 import subprocess
 import sys
+import shutil
+from pathlib import Path
 
 def run(cmd):
     print(f"\n>>> {' '.join(cmd)}\n")
@@ -17,9 +19,9 @@ def run(cmd):
 
 
 def main():
-    print("Instalando/atualizando dependências (PyQt6, openpyxl, pyinstaller)...")
+    print("Instalando/atualizando dependências (PyQt6, openpyxl, python-docx, pyinstaller)...")
     run([sys.executable, "-m", "pip", "install", "--upgrade",
-         "pyinstaller", "PyQt6", "openpyxl"])
+         "pyinstaller", "PyQt6", "openpyxl", "python-docx"])
 
     print("\nGerando o executável...")
     run([
@@ -28,10 +30,12 @@ def main():
         "--name", "QA Control Center",
         "main.py",
     ])
+    shutil.copy2("Template_QA_RPA_Geral.docx", Path("dist") / "Template_QA_RPA_Geral.docx")
 
     print("\n" + "=" * 60)
     print(" Pronto! O executável está em:")
     print(r"  dist\QA Control Center.exe")
+    print(r"  dist\Template_QA_RPA_Geral.docx (mantenha junto do .exe)")
     print("=" * 60)
 
 

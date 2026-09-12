@@ -1,3 +1,4 @@
 PyQt6
 openpyxl
+python-docx
 pyinstaller

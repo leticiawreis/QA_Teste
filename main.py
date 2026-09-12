@@ -11,6 +11,7 @@ from PyQt6.QtWidgets import (
 )
 from openpyxl import Workbook, load_workbook
 from openpyxl.styles import Font, PatternFill
+from word_report import ReportWizard
 
 # ---------------------------------------------------------------------------
 # Configuração
@@ -416,7 +417,7 @@ class SimpleForm(FormBase):
 
 NAV_ITEMS = [
     "📊 Dashboard", "🧪 Casos de Teste", "🐞 Bugs", "⚠️ Riscos",
-    "📚 Conhecimento", "📋 Checklists", "📁 Abrir pasta QA",
+    "📚 Conhecimento", "📋 Checklists", "📝 Relatório Word", "📁 Abrir pasta QA",
 ]
 
 FORM_SPECS = [
@@ -464,6 +465,7 @@ class Main(QMainWindow):
         self.stack.addWidget(BugForm(self.refresh))
         for spec in FORM_SPECS:
             self.stack.addWidget(SimpleForm(spec, self.refresh))
+        self.stack.addWidget(ReportWizard(QA_DIR))
 
         self.nav.currentRowChanged.connect(self.change_page)
         self.nav.setCurrentRow(0)
